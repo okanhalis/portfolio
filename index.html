@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>OKAN95 — Product Designer</title>
+<meta name="description" content="Product Designer portfolyo — Windows 2000 masaüstü teması">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><rect width=%2216%22 height=%2216%22 fill=%22%23008080%22/><rect x=%222%22 y=%222%22 width=%2212%22 height=%2210%22 fill=%22%23c0c0c0%22/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- BOOT SCREEN -->
+<div id="boot-screen">
+  <div class="boot-inner">
+    <div class="boot-logo">OKAN<span>95</span></div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+    <div class="boot-text">Başlatılıyor…</div>
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<main id="desktop">
+
+  <!-- Desktop icons -->
+  <div id="icons">
+    <button class="icon" data-window="about" ondblclick="void(0)">
+      <img src="assets/icon-user.svg" alt="">
+      <span>Hakkımda</span>
+    </button>
+    <button class="icon" data-window="projects">
+      <img src="assets/icon-folder.svg" alt="">
+      <span>Projeler</span>
+    </button>
+    <button class="icon" data-window="resume">
+      <img src="assets/icon-doc.svg" alt="">
+      <span>Özgeçmiş.txt</span>
+    </button>
+    <button class="icon" data-window="contact">
+      <img src="assets/icon-mail.svg" alt="">
+      <span>İletişim</span>
+    </button>
+    <button class="icon" data-window="browser">
+      <img src="assets/icon-globe.svg" alt="">
+      <span>Sosyal.lnk</span>
+    </button>
+    <button class="icon" data-window="bin">
+      <img src="assets/icon-bin.svg" alt="">
+      <span>Geri Dönüşüm Kutusu</span>
+    </button>
+  </div>
+
+  <!-- Windows layer -->
+  <div id="windows-layer"></div>
+
+  <!-- Taskbar -->
+  <footer id="taskbar">
+    <button id="start-btn">
+      <img src="assets/icon-flag.svg" alt="">
+      <span>Başlat</span>
+    </button>
+    <div id="task-buttons"></div>
+    <div id="tray">
+      <span id="clock">00:00</span>
+    </div>
+  </footer>
+
+  <!-- Start menu -->
+  <nav id="start-menu">
+    <div class="start-side">OKAN95</div>
+    <ul>
+      <li data-window="about"><img src="assets/icon-user.svg" alt=""> Hakkımda</li>
+      <li data-window="projects"><img src="assets/icon-folder.svg" alt=""> Projeler</li>
+      <li data-window="resume"><img src="assets/icon-doc.svg" alt=""> Özgeçmiş.txt</li>
+      <li data-window="contact"><img src="assets/icon-mail.svg" alt=""> İletişim</li>
+      <li data-window="browser"><img src="assets/icon-globe.svg" alt=""> Sosyal.lnk</li>
+      <li class="sep"></li>
+      <li id="shutdown-item"><img src="assets/icon-power.svg" alt=""> Kapat…</li>
+    </ul>
+  </nav>
+
+</main>
+
+<div id="shutdown-screen"></div>
+
+<!-- ============================================================
+     WINDOW CONTENT TEMPLATES
+     İçeriği doldurmak için sadece bu template'lerin içini düzenle.
+     ============================================================ -->
+<template id="tpl-about">
+  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="notepad">
+<pre>Merhaba, ben [ADIN SOYADIN].
+
+Product Designer olarak [X yıl]dır [ürün/alan] üzerine çalışıyorum.
+Bu bölüme kısa bir "hakkımda" metni, ilgi alanların ve
+yaklaşımın hakkında birkaç cümle gelecek.
+
+TODO: Bu metni index.html içinde #tpl-about şablonundan düzenle.</pre>
+  </div>
+</template>
+
+<template id="tpl-projects">
+  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="folder-view">
+    <button class="file-icon" data-project="1">
+      <img src="assets/icon-image.svg" alt="">
+      <span>Proje 1</span>
+    </button>
+    <button class="file-icon" data-project="2">
+      <img src="assets/icon-image.svg" alt="">
+      <span>Proje 2</span>
+    </button>
+    <button class="file-icon" data-project="3">
+      <img src="assets/icon-image.svg" alt="">
+      <span>Proje 3</span>
+    </button>
+    <button class="file-icon" data-project="4">
+      <img src="assets/icon-image.svg" alt="">
+      <span>Proje 4</span>
+    </button>
+  </div>
+</template>
+
+<template id="tpl-resume">
+  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="notepad">
+<pre>ÖZGEÇMİŞ
+
+TODO: Kısa özgeçmiş özeti buraya, ya da bu pencereye
+gerçek bir PDF/CV linki eklenecek (assets/cv.pdf).
+
+Deneyim
+-------
+[Şirket] — [Rol] — [Tarih aralığı]
+[Şirket] — [Rol] — [Tarih aralığı]
+
+Yetenekler
+----------
+[Figma, tasarım sistemleri, prototipleme, ...]</pre>
+  </div>
+  <div class="win-toolbar" style="border-top:1px solid var(--btn-shadow); border-bottom:none;">
+    <a href="assets/cv.pdf" class="btn-95" download>CV'yi indir (PDF)</a>
+  </div>
+</template>
+
+<template id="tpl-contact">
+  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="contact-form-wrap">
+    <p>Bana ulaşmak için:</p>
+    <table class="contact-table">
+      <tr><td>E-posta:</td><td><a href="mailto:okan.hls@gmail.com">okan.hls@gmail.com</a></td></tr>
+      <tr><td>LinkedIn:</td><td><a href="#" target="_blank">TODO: link ekle</a></td></tr>
+      <tr><td>Instagram:</td><td><a href="#" target="_blank">TODO: link ekle</a></td></tr>
+    </table>
+  </div>
+</template>
+
+<template id="tpl-browser">
+  <div class="ie-toolbar">
+    <span>Adres:</span>
+    <div class="ie-address">https://okan-portfolio.example</div>
+  </div>
+  <div class="ie-content">
+    <h2>Sosyal Medya &amp; Linkler</h2>
+    <ul class="link-list">
+      <li><a href="#" target="_blank">TODO: Behance / Dribbble</a></li>
+      <li><a href="#" target="_blank">TODO: LinkedIn</a></li>
+      <li><a href="#" target="_blank">TODO: Instagram</a></li>
+      <li><a href="#" target="_blank">TODO: GitHub</a></li>
+    </ul>
+  </div>
+</template>
+
+<template id="tpl-bin">
+  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="notepad" style="text-align:center; padding-top:40px; color:#666;">
+    Geri Dönüşüm Kutusu boş.
+  </div>
+</template>
+
+<template id="tpl-project-detail">
+  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="notepad">
+<pre>PROJE BAŞLIĞI
+
+TODO: Proje görseli, açıklaması, rolün ve sonuçlar
+buraya gelecek. Her proje için assets/ klasörüne görsel
+ekleyip js/script.js içindeki PROJECTS dizisini düzenle.</pre>
+  </div>
+</template>
+
+<script src="js/script.js"></script>
+</body>
+</html>
