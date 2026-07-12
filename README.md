@@ -8,6 +8,7 @@ Her şey `index.html` içindeki `<template id="tpl-...">` bloklarında:
 
 - `tpl-about` — Hakkımda metni
 - `tpl-projects` + `js/script.js` içindeki `PROJECTS` — proje listesi ve detay şablonu (`tpl-project-detail`)
+- `tpl-music` + `js/script.js` içindeki `TRACKS` — müzik listesi ve detay şablonu (`tpl-track-detail`, gerçek ses dosyası/embed için)
 - `tpl-resume` — özgeçmiş metni / `assets/cv.pdf` linki
 - `tpl-contact` — e-posta ve sosyal linkler
 - `tpl-browser` — sosyal medya linkleri

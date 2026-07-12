@@ -3,20 +3,28 @@
 // ===========================================================
 
 const APPS = {
-  about:    { title: 'Hakkımda',        icon: 'assets/icon-user.svg',   tpl: 'tpl-about',    w: 420, h: 300 },
-  projects: { title: 'Projeler',        icon: 'assets/icon-folder.svg', tpl: 'tpl-projects', w: 460, h: 320 },
-  resume:   { title: 'Özgeçmiş.txt',    icon: 'assets/icon-doc.svg',    tpl: 'tpl-resume',   w: 440, h: 360 },
-  contact:  { title: 'İletişim',        icon: 'assets/icon-mail.svg',   tpl: 'tpl-contact',  w: 380, h: 260 },
-  browser:  { title: 'Sosyal - Internet Explorer', icon: 'assets/icon-globe.svg', tpl: 'tpl-browser', w: 520, h: 380 },
-  bin:      { title: 'Geri Dönüşüm Kutusu', icon: 'assets/icon-bin.svg', tpl: 'tpl-bin', w: 360, h: 240 },
+  about:    { title: 'About Me',        icon: 'assets/icon-user.svg',   tpl: 'tpl-about',    w: 420, h: 300 },
+  projects: { title: 'Projects',        icon: 'assets/icon-folder.svg', tpl: 'tpl-projects', w: 460, h: 320 },
+  music:    { title: 'My Music',        icon: 'assets/icon-folder.svg', tpl: 'tpl-music',    w: 420, h: 300 },
+  resume:   { title: 'Resume.txt',      icon: 'assets/icon-doc.svg',    tpl: 'tpl-resume',   w: 440, h: 360 },
+  contact:  { title: 'Contact',         icon: 'assets/icon-mail.svg',   tpl: 'tpl-contact',  w: 380, h: 260 },
+  browser:  { title: 'Social - Internet Explorer', icon: 'assets/icon-globe.svg', tpl: 'tpl-browser', w: 520, h: 380 },
+  bin:      { title: 'Recycle Bin',     icon: 'assets/icon-bin.svg',    tpl: 'tpl-bin',      w: 360, h: 240 },
 };
 
 // Placeholder project detail data — fill in later.
 const PROJECTS = {
-  1: { title: 'Proje 1' },
-  2: { title: 'Proje 2' },
-  3: { title: 'Proje 3' },
-  4: { title: 'Proje 4' },
+  1: { title: 'Project 1' },
+  2: { title: 'Project 2' },
+  3: { title: 'Project 3' },
+  4: { title: 'Project 4' },
+};
+
+// Placeholder track detail data — fill in later.
+const TRACKS = {
+  1: { title: 'Track 1' },
+  2: { title: 'Track 2' },
+  3: { title: 'Track 3' },
 };
 
 let zTop = 10;
@@ -63,9 +71,9 @@ function openApp(appId, opts = {}) {
       <img src="${icon}" alt="">
       <span class="title-text">${title}</span>
       <div class="win-btns">
-        <button class="min-btn" title="Simge durumuna küçült">_</button>
-        <button class="max-btn" title="Büyüt">▢</button>
-        <button class="close-btn" title="Kapat">✕</button>
+        <button class="min-btn" title="Minimize">_</button>
+        <button class="max-btn" title="Maximize">▢</button>
+        <button class="close-btn" title="Close">✕</button>
       </div>
     </div>
     <div class="win-body"></div>
@@ -97,6 +105,24 @@ function openApp(appId, opts = {}) {
           icon: 'assets/icon-image.svg',
           tpl: 'tpl-project-detail',
           w: 420, h: 320,
+        });
+      });
+    });
+  }
+
+  // Track detail wiring (event delegation inside music window)
+  if (appId === 'music') {
+    body.querySelectorAll('.file-icon[data-track]').forEach(el => {
+      el.addEventListener('dblclick', () => {
+        const tid = el.dataset.track;
+        const track = TRACKS[tid];
+        openApp('track-' + tid, {
+          forceNew: true,
+          winId: 'track-' + tid,
+          title: track.title,
+          icon: 'assets/icon-music.svg',
+          tpl: 'tpl-track-detail',
+          w: 400, h: 260,
         });
       });
     });
@@ -256,7 +282,7 @@ document.getElementById('shutdown-item').addEventListener('click', () => {
   const overlay = document.createElement('div');
   overlay.id = 'shutdown-screen';
   overlay.className = 'show';
-  overlay.innerHTML = 'Bilgisayarınızı kapatabilirsiniz.<br><br><span style="font-size:12px;color:#aaa;">(Sekmeyi kapatabilir ya da sayfayı yenileyebilirsiniz)</span>';
+  overlay.innerHTML = 'It\'s now safe to close this tab.<br><br><span style="font-size:12px;color:#aaa;">(Or just refresh the page)</span>';
   document.body.appendChild(overlay);
 });
 

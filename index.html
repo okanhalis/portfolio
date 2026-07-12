@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>OKAN95 — Product Designer</title>
-<meta name="description" content="Product Designer portfolyo — Windows 2000 masaüstü teması">
+<meta name="description" content="Product Designer portfolio — Windows 2000 desktop theme">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><rect width=%2216%22 height=%2216%22 fill=%22%23008080%22/><rect x=%222%22 y=%222%22 width=%2212%22 height=%2210%22 fill=%22%23c0c0c0%22/></svg>">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,7 +15,7 @@
   <div class="boot-inner">
     <div class="boot-logo">OKAN<span>95</span></div>
     <div class="boot-bar"><div class="boot-bar-fill"></div></div>
-    <div class="boot-text">Başlatılıyor…</div>
+    <div class="boot-text">Starting…</div>
   </div>
 </div>
 
@@ -26,27 +26,31 @@
   <div id="icons">
     <button class="icon" data-window="about" ondblclick="void(0)">
       <img src="assets/icon-user.svg" alt="">
-      <span>Hakkımda</span>
+      <span>About Me</span>
     </button>
     <button class="icon" data-window="projects">
       <img src="assets/icon-folder.svg" alt="">
-      <span>Projeler</span>
+      <span>Projects</span>
+    </button>
+    <button class="icon" data-window="music">
+      <img src="assets/icon-folder.svg" alt="">
+      <span>My Music</span>
     </button>
     <button class="icon" data-window="resume">
       <img src="assets/icon-doc.svg" alt="">
-      <span>Özgeçmiş.txt</span>
+      <span>Resume.txt</span>
     </button>
     <button class="icon" data-window="contact">
       <img src="assets/icon-mail.svg" alt="">
-      <span>İletişim</span>
+      <span>Contact</span>
     </button>
     <button class="icon" data-window="browser">
       <img src="assets/icon-globe.svg" alt="">
-      <span>Sosyal.lnk</span>
+      <span>Social.lnk</span>
     </button>
     <button class="icon" data-window="bin">
       <img src="assets/icon-bin.svg" alt="">
-      <span>Geri Dönüşüm Kutusu</span>
+      <span>Recycle Bin</span>
     </button>
   </div>
 
@@ -57,7 +61,7 @@
   <footer id="taskbar">
     <button id="start-btn">
       <img src="assets/icon-flag.svg" alt="">
-      <span>Başlat</span>
+      <span>Start</span>
     </button>
     <div id="task-buttons"></div>
     <div id="tray">
@@ -69,13 +73,14 @@
   <nav id="start-menu">
     <div class="start-side">OKAN95</div>
     <ul>
-      <li data-window="about"><img src="assets/icon-user.svg" alt=""> Hakkımda</li>
-      <li data-window="projects"><img src="assets/icon-folder.svg" alt=""> Projeler</li>
-      <li data-window="resume"><img src="assets/icon-doc.svg" alt=""> Özgeçmiş.txt</li>
-      <li data-window="contact"><img src="assets/icon-mail.svg" alt=""> İletişim</li>
-      <li data-window="browser"><img src="assets/icon-globe.svg" alt=""> Sosyal.lnk</li>
+      <li data-window="about"><img src="assets/icon-user.svg" alt=""> About Me</li>
+      <li data-window="projects"><img src="assets/icon-folder.svg" alt=""> Projects</li>
+      <li data-window="music"><img src="assets/icon-folder.svg" alt=""> My Music</li>
+      <li data-window="resume"><img src="assets/icon-doc.svg" alt=""> Resume.txt</li>
+      <li data-window="contact"><img src="assets/icon-mail.svg" alt=""> Contact</li>
+      <li data-window="browser"><img src="assets/icon-globe.svg" alt=""> Social.lnk</li>
       <li class="sep"></li>
-      <li id="shutdown-item"><img src="assets/icon-power.svg" alt=""> Kapat…</li>
+      <li id="shutdown-item"><img src="assets/icon-power.svg" alt=""> Shut Down…</li>
     </ul>
   </nav>
 
@@ -85,84 +90,114 @@
 
 <!-- ============================================================
      WINDOW CONTENT TEMPLATES
-     İçeriği doldurmak için sadece bu template'lerin içini düzenle.
+     To fill in content, just edit the markup inside these templates.
      ============================================================ -->
 <template id="tpl-about">
-  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
   <div class="notepad">
-<pre>Merhaba, ben [ADIN SOYADIN].
+<pre>Hi, I'm [YOUR NAME].
 
-Product Designer olarak [X yıl]dır [ürün/alan] üzerine çalışıyorum.
-Bu bölüme kısa bir "hakkımda" metni, ilgi alanların ve
-yaklaşımın hakkında birkaç cümle gelecek.
+I've been working as a Product Designer for [X years], focused on
+[product/field]. This section will hold a short "about me" text —
+your interests, background, and approach.
 
-TODO: Bu metni index.html içinde #tpl-about şablonundan düzenle.</pre>
+TODO: Edit this text inside the #tpl-about template in index.html.</pre>
   </div>
 </template>
 
 <template id="tpl-projects">
-  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
   <div class="folder-view">
     <button class="file-icon" data-project="1">
       <img src="assets/icon-image.svg" alt="">
-      <span>Proje 1</span>
+      <span>Project 1</span>
     </button>
     <button class="file-icon" data-project="2">
       <img src="assets/icon-image.svg" alt="">
-      <span>Proje 2</span>
+      <span>Project 2</span>
     </button>
     <button class="file-icon" data-project="3">
       <img src="assets/icon-image.svg" alt="">
-      <span>Proje 3</span>
+      <span>Project 3</span>
     </button>
     <button class="file-icon" data-project="4">
       <img src="assets/icon-image.svg" alt="">
-      <span>Proje 4</span>
+      <span>Project 4</span>
     </button>
+  </div>
+</template>
+
+<template id="tpl-music">
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
+  <div class="folder-view">
+    <button class="file-icon" data-track="1">
+      <img src="assets/icon-music.svg" alt="">
+      <span>Track 1.mp3</span>
+    </button>
+    <button class="file-icon" data-track="2">
+      <img src="assets/icon-music.svg" alt="">
+      <span>Track 2.mp3</span>
+    </button>
+    <button class="file-icon" data-track="3">
+      <img src="assets/icon-music.svg" alt="">
+      <span>Track 3.mp3</span>
+    </button>
+  </div>
+</template>
+
+<template id="tpl-track-detail">
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
+  <div class="notepad">
+<pre>TRACK TITLE
+
+TODO: Add a real audio file / embed player here (e.g. an
+&lt;audio&gt; tag pointing at assets/music/track-1.mp3), plus
+whatever notes you want about it. Edit the TRACKS object in
+js/script.js and this #tpl-track-detail template.</pre>
   </div>
 </template>
 
 <template id="tpl-resume">
-  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
   <div class="notepad">
-<pre>ÖZGEÇMİŞ
+<pre>RESUME
 
-TODO: Kısa özgeçmiş özeti buraya, ya da bu pencereye
-gerçek bir PDF/CV linki eklenecek (assets/cv.pdf).
+TODO: Put a short resume summary here, or link this window to
+a real PDF/CV (assets/cv.pdf).
 
-Deneyim
--------
-[Şirket] — [Rol] — [Tarih aralığı]
-[Şirket] — [Rol] — [Tarih aralığı]
-
-Yetenekler
+Experience
 ----------
-[Figma, tasarım sistemleri, prototipleme, ...]</pre>
+[Company] — [Role] — [Date range]
+[Company] — [Role] — [Date range]
+
+Skills
+------
+[Figma, design systems, prototyping, ...]</pre>
   </div>
   <div class="win-toolbar" style="border-top:1px solid var(--btn-shadow); border-bottom:none;">
-    <a href="assets/cv.pdf" class="btn-95" download>CV'yi indir (PDF)</a>
+    <a href="assets/cv.pdf" class="btn-95" download>Download CV (PDF)</a>
   </div>
 </template>
 
 <template id="tpl-contact">
-  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
   <div class="contact-form-wrap">
-    <p>Bana ulaşmak için:</p>
+    <p>Get in touch:</p>
     <table class="contact-table">
-      <tr><td>E-posta:</td><td><a href="mailto:okan.hls@gmail.com">okan.hls@gmail.com</a></td></tr>
-      <tr><td>LinkedIn:</td><td><a href="#" target="_blank">TODO: link ekle</a></td></tr>
-      <tr><td>Instagram:</td><td><a href="#" target="_blank">TODO: link ekle</a></td></tr>
+      <tr><td>Email:</td><td><a href="mailto:okan.hls@gmail.com">okan.hls@gmail.com</a></td></tr>
+      <tr><td>LinkedIn:</td><td><a href="#" target="_blank">TODO: add link</a></td></tr>
+      <tr><td>Instagram:</td><td><a href="#" target="_blank">TODO: add link</a></td></tr>
     </table>
   </div>
 </template>
 
 <template id="tpl-browser">
   <div class="ie-toolbar">
-    <span>Adres:</span>
+    <span>Address:</span>
     <div class="ie-address">https://okan-portfolio.example</div>
   </div>
   <div class="ie-content">
-    <h2>Sosyal Medya &amp; Linkler</h2>
+    <h2>Social Media &amp; Links</h2>
     <ul class="link-list">
       <li><a href="#" target="_blank">TODO: Behance / Dribbble</a></li>
       <li><a href="#" target="_blank">TODO: LinkedIn</a></li>
@@ -173,20 +208,20 @@ Yetenekler
 </template>
 
 <template id="tpl-bin">
-  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
   <div class="notepad" style="text-align:center; padding-top:40px; color:#666;">
-    Geri Dönüşüm Kutusu boş.
+    Recycle Bin is empty.
   </div>
 </template>
 
 <template id="tpl-project-detail">
-  <div class="win-toolbar">Dosya &nbsp; Düzen &nbsp; Görünüm &nbsp; Yardım</div>
+  <div class="win-toolbar">File &nbsp; Edit &nbsp; View &nbsp; Help</div>
   <div class="notepad">
-<pre>PROJE BAŞLIĞI
+<pre>PROJECT TITLE
 
-TODO: Proje görseli, açıklaması, rolün ve sonuçlar
-buraya gelecek. Her proje için assets/ klasörüne görsel
-ekleyip js/script.js içindeki PROJECTS dizisini düzenle.</pre>
+TODO: A project image, description, your role and outcomes will
+go here. For each project, add an image to assets/ and edit the
+PROJECTS object in js/script.js.</pre>
   </div>
 </template>
 
